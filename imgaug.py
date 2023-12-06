@@ -19,12 +19,12 @@ seq = iaa.Sequential([
 ])
 
 # Load an example image (replace with your own image path)
-image_path = "C:/Users/Admin/Downloads/Avatar-Teaser-Poster.jpg"
+image_path = "img_path"
 image = cv2.imread(image_path)
 images_aug = [seq(image=image) for _ in range(10)]  # Augment 10 variations
 
 # Save augmented images to a directory
-output_dir = "F:/Lab/test"
+output_dir = "output_path"
 os.makedirs(output_dir, exist_ok=True)
 for i, augmented_image in enumerate(images_aug):
     cv2.imwrite(os.path.join(output_dir, f"augmented_image_{i}.jpg"), augmented_image)
